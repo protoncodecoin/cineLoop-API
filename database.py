@@ -1,10 +1,10 @@
 from typing import Annotated
 from fastapi import Depends
 from sqlmodel import SQLModel, create_engine, Session
-from . import models
+from . import models  # noqa: F401
 
-sqlite_file_name = "cineloop.db"
-sqlite_url = f"sqlite:///{sqlite_file_name}"
+# sqlite_file_name = "cineloop.db"
+sqlite_url = "sqlite:///./cineloop/cineloop.db"
 
 connect_args = {"check_same_thread": False}
 engine = create_engine(sqlite_url, connect_args=connect_args)
